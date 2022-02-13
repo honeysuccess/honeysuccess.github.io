@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>我的第一篇博客文章 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Redis知识点： nosql 讲解 阿里巴巴架构演进 nosql 数据模型 nosql 四大分类 CAP BASE Redis 入门 Redis 安装 五大基本数据类型  String List Set Hash Zset   三种特殊数据类型 geo hyperloglog bitmap   Redis 配置文件 Redis 持久化 Redis 事务操作 Redis 实现订阅发布 主从复制 哨">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我的第一篇博客文章">
+<meta property="og:url" content="http://example.com/2022/02/13/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Redis知识点： nosql 讲解 阿里巴巴架构演进 nosql 数据模型 nosql 四大分类 CAP BASE Redis 入门 Redis 安装 五大基本数据类型  String List Set Hash Zset   三种特殊数据类型 geo hyperloglog bitmap   Redis 配置文件 Redis 持久化 Redis 事务操作 Redis 实现订阅发布 主从复制 哨">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="c:/Users/越努力，越幸运。/Desktop/Redis知识.assets/1632708671660.png">
+<meta property="og:image" content="c:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsC5A8.tmp.png">
+<meta property="og:image" content="c:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsC5A9.tmp.png">
+<meta property="og:image" content="c:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsC5AA.tmp.png">
+<meta property="og:image" content="c:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsC5BB.tmp.png">
+<meta property="og:image" content="c:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsC5BC.tmp.png">
+<meta property="og:image" content="c:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsC5BD.tmp.png">
+<meta property="og:image" content="c:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsC5BE.tmp.png">
+<meta property="og:image" content="c:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsC5BF.tmp.png">
+<meta property="og:image" content="c:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsC5C0.tmp.png">
+<meta property="og:image" content="c:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsC5D0.tmp.png">
+<meta property="og:image" content="c:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsC5D1.tmp.png">
+<meta property="og:image" content="c:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsC5D2.tmp.png">
+<meta property="og:image" content="c:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsC5D3.tmp.png">
+<meta property="og:image" content="c:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsC5D4.tmp.png">
+<meta property="og:image" content="c:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsC5D5.tmp.png">
+<meta property="og:image" content="c:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsC5D6.tmp.png">
+<meta property="og:image" content="c:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsC5E7.tmp.png">
+<meta property="og:image" content="c:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsC5E8.tmp.png">
+<meta property="og:image" content="c:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsC5E9.tmp.png">
+<meta property="og:image" content="c:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsC5EA.tmp.png">
+<meta property="og:image" content="c:/Users/越努力，越幸运。/Desktop/Redis知识.assets/1632736495485.png">
+<meta property="og:image" content="c:/Users/越努力，越幸运。/Desktop/Redis知识.assets/1.png">
+<meta property="og:image" content="c:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsDF3A.tmp.jpg">
+<meta property="og:image" content="c:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsDF3B.tmp.jpg">
+<meta property="og:image" content="c:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsDF3C.tmp.jpg">
+<meta property="og:image" content="c:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsDF3D.tmp.jpg">
+<meta property="og:image" content="c:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsDF3E.tmp.jpg">
+<meta property="og:image" content="c:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsDF3F.tmp.jpg">
+<meta property="og:image" content="c:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsDF4F.tmp.jpg">
+<meta property="og:image" content="c:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsDF50.tmp.jpg">
+<meta property="og:image" content="c:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsDF51.tmp.jpg">
+<meta property="article:published_time" content="2022-02-13T06:35:18.000Z">
+<meta property="article:modified_time" content="2022-02-13T06:38:11.431Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/越努力，越幸运。/Desktop/Redis知识.assets/1632708671660.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-我的第一篇博客文章" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/02/13/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="article-date">
+  <time class="dt-published" datetime="2022-02-13T06:35:18.000Z" itemprop="datePublished">2022-02-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      我的第一篇博客文章
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Redis知识点："><a href="#Redis知识点：" class="headerlink" title="Redis知识点："></a>Redis知识点：</h2><ul>
+<li>nosql 讲解</li>
+<li>阿里巴巴架构演进</li>
+<li>nosql 数据模型</li>
+<li>nosql 四大分类</li>
+<li>CAP</li>
+<li>BASE</li>
+<li>Redis 入门</li>
+<li>Redis 安装</li>
+<li>五大基本数据类型 <ul>
+<li>String</li>
+<li>List</li>
+<li>Set</li>
+<li>Hash</li>
+<li>Zset</li>
+</ul>
+</li>
+<li>三种特殊数据类型<ul>
+<li>geo</li>
+<li>hyperloglog</li>
+<li>bitmap</li>
+</ul>
+</li>
+<li>Redis 配置文件</li>
+<li>Redis 持久化</li>
+<li>Redis 事务操作</li>
+<li>Redis 实现订阅发布</li>
+<li>主从复制</li>
+<li>哨兵模式</li>
+<li>缓存穿透、击穿、雪崩</li>
+<li>新功能：ACL、多线程、Cluster</li>
+</ul>
+<h2 id="技术的分类"><a href="#技术的分类" class="headerlink" title="技术的分类"></a>技术的分类</h2><p>1、解决功能性的问题：Java、Jsp、RDBMS、Tomcat、HTML、Linux、JDBC、SVN</p>
+<p>2、解决扩展性的问题：Struts、Spring、SpringMVC、Hibernate、Mybatis</p>
+<p>3、解决性能的问题：<strong>NoSQL</strong>、Java线程、Hadoop、Nginx、MQ、ElasticSearch</p>
+<h1 id="NOSQL-数据库"><a href="#NOSQL-数据库" class="headerlink" title="NOSQL 数据库"></a>NOSQL 数据库</h1><h2 id="一、NoSQL数据库概述"><a href="#一、NoSQL数据库概述" class="headerlink" title="一、NoSQL数据库概述"></a>一、NoSQL数据库概述</h2><p>NoSQL(NoSQL &#x3D; <em><strong>*Not Only SQL*</strong></em> )，意即“不仅仅是SQL”，泛指<strong>非关系型的数据库</strong>。 </p>
+<p>NoSQL 不依赖业务逻辑方式存储，而以简单的key-value模式存储。因此大大的增加了数据库的扩展能力。</p>
+<ul>
+<li>不遵循SQL标准。</li>
+<li>不支持事务的四大特性（ACID），但支持事务。</li>
+<li>远超于SQL的性能。</li>
+</ul>
+<p><strong>NoSQL适用场景</strong></p>
+<ul>
+<li>对数据高并发的读写</li>
+<li>海量数据的读写</li>
+<li>对数据高可扩展性的</li>
+</ul>
+<p><strong>NoSQL不适用场景</strong></p>
+<ul>
+<li>需要事务支持</li>
+<li>基于sql的结构化查询存储，处理复杂的关系,需要即席查询。</li>
+<li>（用不着sql的和用了sql也不行的情况，请考虑用NoSql）</li>
+</ul>
+<p> <strong>Memcache</strong></p>
+<ul>
+<li>数据都在内存中，一般不持久化</li>
+<li>多线程+锁</li>
+<li>支持简单的key-value模式，支持类型单一</li>
+<li>一般是作为缓存数据库辅助持久化的数据库</li>
+</ul>
+<p><strong>Redis</strong></p>
+<ul>
+<li>单线程+多路IO复用</li>
+<li>数据都在内存中，支持持久化，主要用作备份恢复</li>
+<li>除了支持简单的key-value模式，还支持多种数据结构的存储，比如 list、set、hash、zset等。</li>
+<li>一般是作为缓存数据库辅助持久化的数据库</li>
+</ul>
+<p><strong>MongoDB</strong></p>
+<ul>
+<li>高性能、开源、模式自由(schema  free)的<strong>文档型数据库</strong></li>
+<li>数据都在内存中， 如果内存不足，把不常用的数据保存到硬盘</li>
+<li>虽然是key-value模式，但是对value（尤其是<strong>json</strong>）提供了丰富的查询功能</li>
+<li>支持二进制数据及大型对象</li>
+<li>可以根据数据的特点<strong>替代RDBMS</strong> ，成为独立的数据库。或者配合RDBMS，存储特定的数据。</li>
+</ul>
+<p><strong>多样的数据结构存储持久化数据</strong></p>
+<p><img src="C:/Users/越努力，越幸运。/Desktop/Redis知识.assets/1632708671660.png" alt="1632708671660"></p>
+<h2 id="二、Redis-概述安装（Linux）"><a href="#二、Redis-概述安装（Linux）" class="headerlink" title="二、Redis 概述安装（Linux）"></a>二、Redis 概述安装（Linux）</h2><h3 id="1、安装"><a href="#1、安装" class="headerlink" title="1、安装"></a>1、安装</h3><ul>
+<li>下载安装最新版的gcc 编译器                            yum install gcc</li>
+<li>下载redis-6.2.1.tar.gz放&#x2F;opt目录</li>
+<li>解压                                                              tar -zxvf redis-6.2.1.tar.gz</li>
+<li>解压完成后进入目录                                  cd redis-6.2.1</li>
+<li>编译安装                                                make &amp; make install                </li>
+<li>mkdir -p &#x2F;usr&#x2F;local&#x2F;redis&#x2F;bin</li>
+<li>cd src</li>
+<li>cp redis-benchmark redis-check-aof redis-cli redis-sentinel redis-server redis-trib.rb &#x2F;usr&#x2F;local&#x2F;redis&#x2F;bin&#x2F;</li>
+<li>修改环境变量                  vi &#x2F;etc&#x2F;profile      export PATH&#x3D;&#x2F;usr&#x2F;local&#x2F;redis&#x2F;bin:$PATH</li>
+<li>将配置文件也移至创建的目录   cp &#x2F;opt&#x2F;software&#x2F;redis-5.0.5&#x2F;redis.conf &#x2F;usr&#x2F;local&#x2F;redis&#x2F;bin&#x2F;</li>
+<li>进入创建的目录，修改配置，设置后台启动  vim redis.conf   关掉保护模式protected-mode no    后台启动设置  daemonize yes</li>
+<li>绑定的IP  bind 0.0.0.0(任意ip都可以访问)     设置密码   requirepass honeysuccess</li>
+</ul>
+<p><strong>安装目录：  usr&#x2F;local&#x2F;bin</strong></p>
+<p>查看默认安装目录：</p>
+<ul>
+<li>redis-benchmark:性能测试工具，可以在自己本子运行，看看自己本子性能如何</li>
+<li>redis-check-aof：修复有问题的AOF文件，rdb和aof后面讲</li>
+<li>redis-check-dump：修复有问题的dump.rdb文件</li>
+<li>redis-sentinel：Redis集群使用</li>
+<li>redis-server：Redis服务器启动命令</li>
+<li>redis-cli：客户端，操作入口</li>
+</ul>
+<h3 id="2、Redis的配置文件"><a href="#2、Redis的配置文件" class="headerlink" title="2、Redis的配置文件"></a>2、Redis的配置文件</h3><p>自定义目录：&#x2F;usr&#x2F;local&#x2F;redis&#x2F;bin&#x2F;redis.conf</p>
+<p><strong>###   Units单位   ###</strong></p>
+<p>配置大小单位,开头定义了一些基本的度量单位，只支持bytes，不支持bit</p>
+<p>大小写不敏感</p>
+<p><img src="C:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsC5A8.tmp.png" alt="img"> </p>
+<p><strong>###   INCLUDES包含   ###</strong></p>
+<p><img src="C:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsC5A9.tmp.png" alt="img"> </p>
+<p>类似jsp中的include，多实例的情况可以把公用的配置文件提取出来</p>
+<p><strong>###   网络相关配置   ###</strong></p>
+<p><strong>bind</strong></p>
+<p>默认情况bind&#x3D;127.0.0.1只能接受本机的访问请求</p>
+<p>不写的情况下，无限制接受任何ip地址的访问</p>
+<p>生产环境肯定要写你应用服务器的地址；服务器是需要远程访问的，所以需要将其注释掉</p>
+<p>如果开启了protected-mode，那么在没有设定bind ip且没有设密码的情况下，Redis只允许接受本机的响应</p>
+<p><img src="C:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsC5AA.tmp.png" alt="img"> </p>
+<p>保存配置，停止服务，重启启动查看进程，不再是本机访问了。</p>
+<p><img src="C:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsC5BB.tmp.png" alt="img"> </p>
+<p><strong>protected-mode</strong></p>
+<p>将本机访问保护模式设置no</p>
+<p><img src="C:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsC5BC.tmp.png" alt="img"> </p>
+<p><strong>port</strong></p>
+<p>端口号，默认 6379</p>
+<p><img src="C:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsC5BD.tmp.png" alt="img"> </p>
+<p><strong>tcp-backlog</strong></p>
+<p>设置tcp的backlog，backlog其实是一个连接队列，backlog队列总和&#x3D;未完成三次握手队列 + 已经完成三次握手队列。</p>
+<p>在高并发环境下你需要一个高backlog值来避免慢客户端连接问题。</p>
+<p>注意Linux内核会将这个值减小到&#x2F;proc&#x2F;sys&#x2F;net&#x2F;core&#x2F;somaxconn的值（128），所以需要确认增大&#x2F;proc&#x2F;sys&#x2F;net&#x2F;core&#x2F;somaxconn和&#x2F;proc&#x2F;sys&#x2F;net&#x2F;ipv4&#x2F;tcp_max_syn_backlog（128）两个值来达到想要的效果</p>
+<p><img src="C:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsC5BE.tmp.png" alt="img"> </p>
+<p><strong>timeout</strong></p>
+<p>一个空闲的客户端维持多少秒会关闭，0表示关闭该功能。即永不关闭。</p>
+<p><img src="C:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsC5BF.tmp.png" alt="img"> </p>
+<p><strong>tcp-keepalive</strong></p>
+<p>对访问客户端的一种心跳检测，每个n秒检测一次。</p>
+<p>单位为秒，如果设置为0，则不会进行Keepalive检测，建议设置成60 </p>
+<p><img src="C:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsC5C0.tmp.png" alt="img"> </p>
+<p><strong>###   GENERAL通用   ###</strong></p>
+<p><strong>daemonize</strong></p>
+<p>是否为后台进程，设置为yes</p>
+<p>守护进程，后台启动</p>
+<p><img src="C:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsC5D0.tmp.png" alt="img"> </p>
+<p><strong>pidfile</strong></p>
+<p>存放pid文件的位置，每个实例会产生一个不同的pid文件</p>
+<p><img src="C:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsC5D1.tmp.png" alt="img"> </p>
+<p><strong>loglevel</strong></p>
+<p>指定日志记录级别，Redis总共支持四个级别：debug、verbose、notice、warning，默认为<em><strong>*notice*</strong></em></p>
+<p>四个级别根据使用阶段来选择，生产环境选择notice 或者warning</p>
+<p><img src="C:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsC5D2.tmp.png" alt="img"> </p>
+<p><strong>logfile</strong></p>
+<p>日志文件名称</p>
+<p><img src="C:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsC5D3.tmp.png" alt="img"> </p>
+<p><strong>databases 16</strong></p>
+<p>设定库的数量 默认16，默认数据库为0，可以使用SELECT <dbid>命令在连接上指定数据库id</p>
+<p><img src="C:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsC5D4.tmp.png" alt="img"> </p>
+<p><strong>###   SECURITY 安全   ###</strong></p>
+<p><em><strong>*设置密码*</strong></em></p>
+<p><img src="C:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsC5D5.tmp.png" alt="img"> </p>
+<p>访问密码的查看、设置和取消</p>
+<p>在命令中设置密码，只是临时的。重启redis服务器，密码就还原了。</p>
+<p>永久设置，需要再配置文件中进行设置。</p>
+<p><img src="C:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsC5D6.tmp.png" alt="img"> </p>
+<p><strong>###   LIMITS限制   ###</strong></p>
+<p><strong>maxclients</strong></p>
+<p>认情况下为10000个客户端。</p>
+<p>Ø 默认情况下为10000个客户端。</p>
+<p>Ø 如果达到了此限制，redis则会拒绝新的连接请求，并且向这些连接请求方发出“max number of clients reached”以作回应。</p>
+<p><img src="C:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsC5E7.tmp.png" alt="img"> </p>
+<p><strong>maxmemory</strong></p>
+<p>Ø 建议****必须设置****，否则，将内存占满，造成服务器宕机</p>
+<p>Ø 设置redis可以使用的内存量。一旦到达内存使用上限，redis将会试图移除内部数据，移除规则可以通过maxmemory-policy来指定。</p>
+<p>Ø 如果redis无法根据移除规则来移除内存中的数据，或者设置了“不允许移除”，那么redis则会针对那些需要申请内存的指令返回错误信息，比如SET、LPUSH等。</p>
+<p>Ø 但是对于无内存申请的指令，仍然会正常响应，比如GET等。如果你的redis是主redis（说明你的redis有从redis），那么在设置内存使用上限时，需要在系统中留出一些内存空间给同步队列缓存，只有在你设置的是“不移除”的情况下，才不用考虑这个因素。</p>
+<p><img src="C:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsC5E8.tmp.png" alt="img"> </p>
+<p><strong>maxmemory-policy</strong></p>
+<p>Ø volatile-lru：使用LRU算法移除key，只对设置了过期时间的键；（最近最少使用）</p>
+<p>Ø allkeys-lru：在所有集合key中，使用LRU算法移除key</p>
+<p>Ø volatile-random：在过期集合中移除随机的key，只对设置了过期时间的键</p>
+<p>Ø allkeys-random：在所有集合key中，移除随机的key</p>
+<p>Ø volatile-ttl：移除那些TTL值最小的key，即那些最近要过期的key</p>
+<p>Ø noeviction：不进行移除。针对写操作，只是返回错误信息</p>
+<p><img src="C:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsC5E9.tmp.png" alt="img"> </p>
+<p><strong>maxmemory-samples</strong></p>
+<p>Ø 设置样本数量，LRU算法和最小TTL算法都并非是精确的算法，而是估算值，所以你可以设置样本的大小，redis默认会检查这么多个key并选择其中LRU的那个。</p>
+<p>Ø 一般设置3到7的数字，数值越小样本越不准确，但性能消耗越小。</p>
+<p><img src="C:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsC5EA.tmp.png" alt="img"> </p>
+<h2 id="三、常用五大数据类型"><a href="#三、常用五大数据类型" class="headerlink" title="三、常用五大数据类型"></a>三、常用五大数据类型</h2><p><strong>Redis键(key)</strong></p>
+<ul>
+<li>keys *查看当前库所有key   (匹配：keys *1)</li>
+<li>exists key判断某个key是否存在</li>
+<li>type key 查看你的key是什么类型</li>
+<li>del key    删除指定的key数据</li>
+<li>unlink key  根据value选择非阻塞删除，仅将keys从keyspace元数据中删除，真正的删除会在后续异步操作。</li>
+<li>expire key 10  10秒钟：为给定的key设置过期时间</li>
+<li>ttl key 查看还有多少秒过期，-1表示永不过期，-2表示已过期</li>
+<li>select命令切换数据库</li>
+<li>dbsize查看当前数据库的key的数量</li>
+<li>flushdb清空当前库</li>
+<li>flushall通杀全部库</li>
+</ul>
+<h3 id="1、String（字符串）"><a href="#1、String（字符串）" class="headerlink" title="1、String（字符串）"></a>1、String（字符串）</h3><p><strong>操作命令：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">// 给一个key追加一个值</span><br><span class="line">APPEND key value</span><br><span class="line">summary: Append a value to a key</span><br><span class="line"></span><br><span class="line">// 将键的整数值减一</span><br><span class="line">DECR key</span><br><span class="line">summary: Decrement the integer value of a key by one</span><br><span class="line"></span><br><span class="line">// 将键的整数值递减给定的数字</span><br><span class="line">DECRBY key decrement</span><br><span class="line">summary: Decrement the integer value of a key by the given number</span><br><span class="line"></span><br><span class="line">// 通过key得到value</span><br><span class="line">GET key</span><br><span class="line">summary: Get the value of a key</span><br><span class="line"></span><br><span class="line">// 设置键的字符串值并返回其旧值</span><br><span class="line">GETSET key value</span><br><span class="line">summary: Set the string value of a key and return its old value</span><br><span class="line"></span><br><span class="line">// 将键的整数值增加一</span><br><span class="line">INCR key</span><br><span class="line">summary: Increment the integer value of a key by one</span><br><span class="line"></span><br><span class="line">//  将键的整数值增加给定的量 </span><br><span class="line">INCRBY key increment</span><br><span class="line">summary: Increment the integer value of a key by the given amount</span><br><span class="line"></span><br><span class="line">// 将键的浮点值增加给定的量</span><br><span class="line">INCRBYFLOAT key increment</span><br><span class="line">summary: Increment the float value of a key by the given amount</span><br><span class="line"></span><br><span class="line">// 获取所有给定键的值</span><br><span class="line">MGET key [key ...]</span><br><span class="line">summary: Get the values of all the given keys</span><br><span class="line"></span><br><span class="line">// 将多个关键点设置为多个值</span><br><span class="line">MSET key value [key value ...]</span><br><span class="line">summary: Set multiple keys to multiple values</span><br><span class="line"></span><br><span class="line">// 仅当不存在多个键时，才将多个键设置为多个值</span><br><span class="line">MSETNX key value [key value ...]</span><br><span class="line">summary: Set multiple keys to multiple values, only if none of the keys exist</span><br><span class="line"></span><br><span class="line">// 设置键的值和过期时间（以毫秒为单位</span><br><span class="line">PSETEX key milliseconds value</span><br><span class="line">summary: Set the value and expiration in milliseconds of a key</span><br><span class="line"></span><br><span class="line">// 设置key和value</span><br><span class="line">SET key value </span><br><span class="line">summary: Set the string value of a key</span><br><span class="line"></span><br><span class="line">// 设置或清除键处存储的字符串值中偏移量处的位</span><br><span class="line">SETBIT key offset value</span><br><span class="line">summary: Sets or clears the bit at offset in the string value stored at key</span><br><span class="line"></span><br><span class="line">// 设置密钥的值和过期时间</span><br><span class="line">SETEX key seconds value</span><br><span class="line">summary: Set the value and expiration of a key</span><br><span class="line"></span><br><span class="line">// 仅当密钥不存在时，才设置密钥的值</span><br><span class="line">SETNX key value</span><br><span class="line">summary: Set the value of a key, only if the key does not exist</span><br><span class="line"></span><br><span class="line">// 覆盖从指定偏移量开始的键处的字符串部分</span><br><span class="line">SETRANGE key offset value</span><br><span class="line">summary: Overwrite part of a string at key starting at the specified offset</span><br><span class="line"></span><br><span class="line">// 获取存储在键中的值的长度</span><br><span class="line">STRLEN key</span><br><span class="line">summary: Get the length of the value stored in a key</span><br></pre></td></tr></table></figure>
+
+<p><strong>使用场景：</strong></p>
+<p>计数器（PV页面浏览量、阅读数等）</p>
+<p>对象缓存存储，一般是将对象转化为json字符串进行存储</p>
+<p>全局id</p>
+<h3 id="2、List（列表）"><a href="#2、List（列表）" class="headerlink" title="2、List（列表）"></a>2、List（列表）</h3><p><strong>操作命令：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">// 删除并获取列表中的第一个元素，或阻止，直到有一个元素可用为止</span><br><span class="line">BLPOP key [key ...] timeout</span><br><span class="line">summary: Remove and get the first element in a list, or block until one is available</span><br><span class="line"></span><br><span class="line">// 删除并获取列表中的最后一个元素，或在其中一个元素可用之前进行阻止</span><br><span class="line">BRPOP key [key ...] timeout</span><br><span class="line">summary: Remove and get the last element in a list, or block until one is available</span><br><span class="line"></span><br><span class="line">// 从列表中弹出一个值，将其推送到另一个列表并返回；或阻塞，直到有一个可用</span><br><span class="line">BRPOPLPUSH source destination timeout</span><br><span class="line">summary: Pop a value from a list, push it to another list and return it; or block until one is available</span><br><span class="line"></span><br><span class="line">// 通过索引从列表中获取元素</span><br><span class="line">LINDEX key index</span><br><span class="line">summary: Get an element from a list by its index</span><br><span class="line"></span><br><span class="line">// 在列表中的另一个元素之前或之后插入一个元素 </span><br><span class="line">LINSERT key BEFORE|AFTER pivot value</span><br><span class="line">summary: Insert an element before or after another element in a list</span><br><span class="line"></span><br><span class="line">// 获取列表的长度</span><br><span class="line">LLEN key</span><br><span class="line">summary: Get the length of a list</span><br><span class="line"></span><br><span class="line">// 删除并获取列表中的第一个元素</span><br><span class="line">LPOP key</span><br><span class="line">summary: Remove and get the first element in a list</span><br><span class="line"></span><br><span class="line">// 将一个或多个值前置到列表中</span><br><span class="line">LPUSH key value [value ...]</span><br><span class="line">summary: Prepend one or multiple values to a list</span><br><span class="line"></span><br><span class="line">// 仅当列表存在时，才在列表前添加值 </span><br><span class="line">LPUSHX key value</span><br><span class="line">summary: Prepend a value to a list, only if the list exists</span><br><span class="line"></span><br><span class="line">// 从列表中获取一系列元素 </span><br><span class="line">LRANGE key start stop</span><br><span class="line">summary: Get a range of elements from a list</span><br><span class="line"></span><br><span class="line">// 从列表中删除元素</span><br><span class="line">LREM key count value</span><br><span class="line">summary: Remove elements from a list</span><br><span class="line"></span><br><span class="line">// 通过索引设置列表中元素的值</span><br><span class="line">LSET key index value</span><br><span class="line">summary: Set the value of an element in a list by its index</span><br><span class="line"></span><br><span class="line">// 将列表修剪到指定范围</span><br><span class="line">LTRIM key start stop</span><br><span class="line">summary: Trim a list to the specified range</span><br><span class="line"></span><br><span class="line">// 删除并获取列表中的最后一个元素 </span><br><span class="line">RPOP key</span><br><span class="line">summary: Remove and get the last element in a list</span><br><span class="line"></span><br><span class="line">//  删除列表中的最后一个元素，将其前置到另一个列表并返回 </span><br><span class="line">RPOPLPUSH source destination</span><br><span class="line">summary: Remove the last element in a list, prepend it to another list and return it</span><br><span class="line"></span><br><span class="line">// 将一个或多个值附加到列表中</span><br><span class="line">RPUSH key value [value ...]</span><br><span class="line">summary: Append one or multiple values to a list</span><br><span class="line"></span><br><span class="line">// 仅当列表存在时，才将值附加到列表</span><br><span class="line">RPUSHX key value</span><br><span class="line">summary: Append a value to a list, only if the list exists</span><br></pre></td></tr></table></figure>
+
+<p><strong>使用场景：</strong></p>
+<p>消息队列、最新列表（评论）</p>
+<h3 id="3、Set（集合）"><a href="#3、Set（集合）" class="headerlink" title="3、Set（集合）"></a>3、Set（集合）</h3><p>set里面的值不能重复。</p>
+<p><strong>操作命令：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">// 向集合中添加一个或多个成员</span><br><span class="line">SADD key member [member ...]</span><br><span class="line">summary: Add one or more members to a set</span><br><span class="line"></span><br><span class="line">// 获取集合中的成员数 </span><br><span class="line">SCARD key</span><br><span class="line">summary: Get the number of members in a set</span><br><span class="line"></span><br><span class="line">// 减去多个集合</span><br><span class="line">SDIFF key [key ...]</span><br><span class="line">summary: Subtract multiple sets</span><br><span class="line"></span><br><span class="line">// 减去多个集合并将结果集合存储在一个键中</span><br><span class="line">SDIFFSTORE destination key [key ...]</span><br><span class="line">summary: Subtract multiple sets and store the resulting set in a key</span><br><span class="line"></span><br><span class="line">// 相交多个集合</span><br><span class="line">SINTER key [key ...]</span><br><span class="line">summary: Intersect multiple sets</span><br><span class="line"></span><br><span class="line">// 将多个集相交并将结果集存储在一个键中</span><br><span class="line">SINTERSTORE destination key [key ...]</span><br><span class="line">summary: Intersect multiple sets and store the resulting set in a key</span><br><span class="line"></span><br><span class="line">// 确定给定值是否为集合的成员</span><br><span class="line">SISMEMBER key member</span><br><span class="line">summary: Determine if a given value is a member of a set</span><br><span class="line"></span><br><span class="line">// 将所有成员集合在一起</span><br><span class="line">SMEMBERS key</span><br><span class="line">summary: Get all the members in a set</span><br><span class="line"></span><br><span class="line">// 将成员从一个集合移动到另一个集合</span><br><span class="line">SMOVE source destination member</span><br><span class="line">summary: Move a member from one set to another</span><br><span class="line"></span><br><span class="line">// 从集合中移除并返回一个或多个随机成员</span><br><span class="line">SPOP key [count]</span><br><span class="line">summary: Remove and return one or multiple random members from a set</span><br><span class="line"></span><br><span class="line">// 从集合中获取一个或多个随机成员</span><br><span class="line">SRANDMEMBER key [count]</span><br><span class="line">summary: Get one or multiple random members from a set</span><br><span class="line"></span><br><span class="line">// 从集合中删除一个或多个成员</span><br><span class="line">SREM key member [member ...]</span><br><span class="line">summary: Remove one or more members from a set</span><br><span class="line"></span><br><span class="line">// 增量迭代集合元素</span><br><span class="line">SSCAN key cursor [MATCH pattern] [COUNT count]</span><br><span class="line">summary: Incrementally iterate Set elements</span><br><span class="line"></span><br><span class="line">// 添加多个集合</span><br><span class="line">SUNION key [key ...]</span><br><span class="line">summary: Add multiple sets</span><br><span class="line"></span><br><span class="line">// 添加多个集合并将结果集合存储在一个键中</span><br><span class="line">SUNIONSTORE destination key [key ...]</span><br><span class="line">summary: Add multiple sets and store the resulting set in a key</span><br></pre></td></tr></table></figure>
+
+<p><strong>使用场景：</strong></p>
+<p>微博中，一个用户关注的所有人在一个集合中，通过交集、并集、差集，实现一些共同关注、推荐关注的功能</p>
+<p>spop抽奖小程序</p>
+<h3 id="4、Hash（哈希）"><a href="#4、Hash（哈希）" class="headerlink" title="4、Hash（哈希）"></a>4、Hash（哈希）</h3><p>map集合，特别适合用于存储对象（因为对象里面包含许多属性），特别是对象中有字段经常修改。</p>
+<p><strong>操作命令：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">HDEL key field [field ...]</span><br><span class="line">summary: Delete one or more hash fields</span><br><span class="line"></span><br><span class="line">HEXISTS key field</span><br><span class="line">summary: Determine if a hash field exists</span><br><span class="line"></span><br><span class="line">HGET key field</span><br><span class="line">summary: Get the value of a hash field</span><br><span class="line"></span><br><span class="line">HGETALL key</span><br><span class="line">summary: Get all the fields and values in a hash</span><br><span class="line"></span><br><span class="line">HINCRBY key field increment</span><br><span class="line">summary: Increment the integer value of a hash field by the given number</span><br><span class="line"></span><br><span class="line">HINCRBYFLOAT key field increment</span><br><span class="line">summary: Increment the float value of a hash field by the given amount</span><br><span class="line"></span><br><span class="line">HKEYS key</span><br><span class="line">summary: Get all the fields in a hash</span><br><span class="line"></span><br><span class="line">HLEN key</span><br><span class="line">summary: Get the number of fields in a hash</span><br><span class="line"></span><br><span class="line">HMGET key field [field ...]</span><br><span class="line">summary: Get the values of all the given hash fields</span><br><span class="line"></span><br><span class="line">HMSET key field value [field value ...]</span><br><span class="line">summary: Set multiple hash fields to multiple values</span><br><span class="line"></span><br><span class="line">HSCAN key cursor [MATCH pattern] [COUNT count]</span><br><span class="line">summary: Incrementally iterate hash fields and associated values</span><br><span class="line"></span><br><span class="line">HSET key field value</span><br><span class="line">summary: Set the string value of a hash field</span><br><span class="line"></span><br><span class="line">HSETNX key field value</span><br><span class="line">summary: Set the value of a hash field, only if the field does not exist</span><br><span class="line"></span><br><span class="line">HSTRLEN key field</span><br><span class="line">summary: Get the length of the value of a hash field</span><br><span class="line"></span><br><span class="line">HVALS key</span><br><span class="line">summary: Get all the values in a hash</span><br></pre></td></tr></table></figure>
+
+<p><strong>使用场景：</strong></p>
+<p>给对象做缓存</p>
+<h3 id="5、Zset（有序集合）"><a href="#5、Zset（有序集合）" class="headerlink" title="5、Zset（有序集合）"></a>5、Zset（有序集合）</h3><p><strong>操作命令：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><span class="line">BZPOPMAX key [key ...] timeout</span><br><span class="line">summary: Remove and return the member with the highest score from one or more sorted sets, or block until one is available</span><br><span class="line">since: 5.0.0</span><br><span class="line"></span><br><span class="line">BZPOPMIN key [key ...] timeout</span><br><span class="line">summary: Remove and return the member with the lowest score from one or more sorted sets, or block until one is available</span><br><span class="line">since: 5.0.0</span><br><span class="line"></span><br><span class="line">ZADD key [NX|XX] [CH] [INCR] score member [score member ...]</span><br><span class="line">summary: Add one or more members to a sorted set, or update its score if it already exists</span><br><span class="line">since: 1.2.0</span><br><span class="line"></span><br><span class="line">ZCARD key</span><br><span class="line">summary: Get the number of members in a sorted set</span><br><span class="line">since: 1.2.0</span><br><span class="line"></span><br><span class="line">ZCOUNT key min max</span><br><span class="line">summary: Count the members in a sorted set with scores within the given values</span><br><span class="line">since: 2.0.0</span><br><span class="line"></span><br><span class="line">ZINCRBY key increment member</span><br><span class="line">summary: Increment the score of a member in a sorted set</span><br><span class="line">since: 1.2.0</span><br><span class="line"></span><br><span class="line">ZINTERSTORE destination numkeys key [key ...] [WEIGHTS weight] [AGGREGATE SUM|MIN|MAX]</span><br><span class="line">summary: Intersect multiple sorted sets and store the resulting sorted set in a new key</span><br><span class="line">since: 2.0.0</span><br><span class="line"></span><br><span class="line">ZLEXCOUNT key min max</span><br><span class="line">summary: Count the number of members in a sorted set between a given lexicographical range</span><br><span class="line">since: 2.8.9</span><br><span class="line"></span><br><span class="line">ZPOPMAX key [count]</span><br><span class="line">summary: Remove and return members with the highest scores in a sorted set</span><br><span class="line">since: 5.0.0</span><br><span class="line"></span><br><span class="line">ZPOPMIN key [count]</span><br><span class="line">summary: Remove and return members with the lowest scores in a sorted set</span><br><span class="line">since: 5.0.0</span><br><span class="line"></span><br><span class="line">ZRANGE key start stop [WITHSCORES]</span><br><span class="line">summary: Return a range of members in a sorted set, by index</span><br><span class="line">since: 1.2.0</span><br><span class="line"></span><br><span class="line">ZRANGEBYLEX key min max [LIMIT offset count]</span><br><span class="line">summary: Return a range of members in a sorted set, by lexicographical range</span><br><span class="line">since: 2.8.9</span><br><span class="line"></span><br><span class="line">ZRANGEBYSCORE key min max [WITHSCORES] [LIMIT offset count]</span><br><span class="line">summary: Return a range of members in a sorted set, by score</span><br><span class="line">since: 1.0.5</span><br><span class="line"></span><br><span class="line">ZRANK key member</span><br><span class="line">summary: Determine the index of a member in a sorted set</span><br><span class="line">since: 2.0.0</span><br><span class="line"></span><br><span class="line">ZREM key member [member ...]</span><br><span class="line">summary: Remove one or more members from a sorted set</span><br><span class="line">since: 1.2.0</span><br><span class="line"></span><br><span class="line">ZREMRANGEBYLEX key min max</span><br><span class="line">summary: Remove all members in a sorted set between the given lexicographical range</span><br><span class="line">since: 2.8.9</span><br><span class="line"></span><br><span class="line">ZREMRANGEBYRANK key start stop</span><br><span class="line">summary: Remove all members in a sorted set within the given indexes</span><br><span class="line">since: 2.0.0</span><br><span class="line"></span><br><span class="line">ZREMRANGEBYSCORE key min max</span><br><span class="line">summary: Remove all members in a sorted set within the given scores</span><br><span class="line">since: 1.2.0</span><br><span class="line"></span><br><span class="line">ZREVRANGE key start stop [WITHSCORES]</span><br><span class="line">summary: Return a range of members in a sorted set, by index, with scores ordered from high to low</span><br><span class="line">since: 1.2.0</span><br><span class="line"></span><br><span class="line">ZREVRANGEBYLEX key max min [LIMIT offset count]</span><br><span class="line">summary: Return a range of members in a sorted set, by lexicographical range, ordered from higher to lower strings.</span><br><span class="line">since: 2.8.9</span><br><span class="line"></span><br><span class="line">ZREVRANGEBYSCORE key max min [WITHSCORES] [LIMIT offset count]</span><br><span class="line">summary: Return a range of members in a sorted set, by score, with scores ordered from high to low</span><br><span class="line">since: 2.2.0</span><br><span class="line"></span><br><span class="line">ZREVRANK key member</span><br><span class="line">summary: Determine the index of a member in a sorted set, with scores ordered from high to low</span><br><span class="line">since: 2.0.0</span><br><span class="line"></span><br><span class="line">ZSCAN key cursor [MATCH pattern] [COUNT count]</span><br><span class="line">summary: Incrementally iterate sorted sets elements and associated scores</span><br><span class="line">since: 2.8.0</span><br><span class="line"></span><br><span class="line">ZSCORE key member</span><br><span class="line">summary: Get the score associated with the given member in a sorted set</span><br><span class="line">since: 1.2.0</span><br><span class="line"></span><br><span class="line">ZUNIONSTORE destination numkeys key [key ...] [WEIGHTS weight] [AGGREGATE SUM|MIN|MAX]</span><br><span class="line">summary: Add multiple sorted sets and store the resulting sorted set in a new key</span><br><span class="line">since: 2.0.0</span><br></pre></td></tr></table></figure>
+
+<p><strong>使用场景：</strong></p>
+<p>排行榜TOP N，需要排序的信息，重要的消息（带权重排序）</p>
+<p><strong>redis中list set zset的区别</strong></p>
+<p><img src="C:/Users/越努力，越幸运。/Desktop/Redis知识.assets/1632736495485.png" alt="1632736495485"></p>
+<h2 id="四、其他数据类型"><a href="#四、其他数据类型" class="headerlink" title="四、其他数据类型"></a>四、其他数据类型</h2><h3 id="1、bitmap-位图"><a href="#1、bitmap-位图" class="headerlink" title="1、bitmap 位图"></a>1、bitmap 位图</h3><p>公司记录某个人一个月的打卡情况 一年365天怎么记录一个人在某个网站的登录，活跃情况 </p>
+<p>两个状态的都能用这种方法进行性能压榨 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">都是操作二进制位来进行记录，就只有0 和 1 两个状态！ </span><br><span class="line">365 天 = 365 bit 1字节 = 8bit 46 个字节左右！ </span><br><span class="line">测试登录次数 </span><br><span class="line">127.0.0.1:6379&gt; setbit login 0 1 </span><br><span class="line">(integer) 0 </span><br><span class="line">127.0.0.1:6379&gt; setbit login 3 1 </span><br><span class="line">(integer) 0 </span><br><span class="line">127.0.0.1:6379&gt; bitcount login </span><br><span class="line">(integer) 2 </span><br><span class="line">周一：1 周二：0 周三：0 周四：1 ...... </span><br><span class="line">查看某一天是否有打卡！ </span><br><span class="line">统计操作，统计 打卡的天数！</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、Geospatial-地理位置"><a href="#2、Geospatial-地理位置" class="headerlink" title="2、Geospatial 地理位置"></a>2、Geospatial 地理位置</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">// 在使用排序集表示的地理空间索引中添加一个或多个地理空间项</span><br><span class="line">GEOADD key longitude latitude member [longitude latitude member ...]</span><br><span class="line">summary: Add one or more geospatial items in the geospatial index represented using a sorted set</span><br><span class="line"></span><br><span class="line">// 返回地理空间索引的两个成员之间的距离</span><br><span class="line">GEODIST key member1 member2 [unit]</span><br><span class="line">summary: Returns the distance between two members of a geospatial index</span><br><span class="line"></span><br><span class="line">// 将地理空间索引的成员作为标准geohash字符串返回</span><br><span class="line">GEOHASH key member [member ...]</span><br><span class="line">summary: Returns members of a geospatial index as standard geohash strings</span><br><span class="line"></span><br><span class="line">// 返回地理空间索引成员的经度和纬度</span><br><span class="line">GEOPOS key member [member ...]</span><br><span class="line">summary: Returns longitude and latitude of members of a geospatial index</span><br><span class="line"></span><br><span class="line">//  查询表示地理空间索引的已排序集，以获取与点的给定最大距离匹配的成员 </span><br><span class="line">GEORADIUS key longitude latitude radius m|km|ft|mi [WITHCOORD] [WITHDIST] [WITHHASH] [COUNT count] [ASC|DESC] [STORE key] [STOREDIST key]</span><br><span class="line">summary: Query a sorted set representing a geospatial index to fetch members matching a given maximum distance from a point</span><br><span class="line"></span><br><span class="line">//  查询表示地理空间索引的已排序集，以获取与成员之间的给定最大距离匹配的成员 </span><br><span class="line">GEORADIUSBYMEMBER key member radius m|km|ft|mi [WITHCOORD] [WITHDIST] [WITHHASH] [COUNT count] [ASC|DESC] [STORE key] [STOREDIST key]</span><br><span class="line">summary: Query a sorted set representing a geospatial index to fetch members matching a given maximum distance from a member</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>使用场景：</strong></p>
+<p>朋友的定位、附近的人，打车距离的计算等</p>
+<h3 id="3、Hyperloglog-基数"><a href="#3、Hyperloglog-基数" class="headerlink" title="3、Hyperloglog 基数"></a>3、Hyperloglog 基数</h3><p>基数就是指一个集合中不同值的数目</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 将指定的元素添加到指定的HyperLogLog。 </span><br><span class="line">PFADD key element [element ...]</span><br><span class="line">summary: Adds the specified elements to the specified HyperLogLog.</span><br><span class="line"></span><br><span class="line">//  返回HyperLogLog在键处观察到的集合的近似基数。 </span><br><span class="line">PFCOUNT key [key ...]</span><br><span class="line">summary: Return the approximated cardinality of the set(s) observed by the HyperLogLog at key(s).</span><br><span class="line"></span><br><span class="line">//  将N个不同的Hyperloglog合并为一个。 </span><br><span class="line">PFMERGE destkey sourcekey [sourcekey ...]</span><br><span class="line">summary: Merge N different HyperLogLogs into a single one.</span><br></pre></td></tr></table></figure>
+
+<h2 id="五、持久化-和-事务"><a href="#五、持久化-和-事务" class="headerlink" title="五、持久化 和 事务"></a>五、持久化 和 事务</h2><h3 id="1、持久化机制RDB"><a href="#1、持久化机制RDB" class="headerlink" title="1、持久化机制RDB"></a>1、持久化机制RDB</h3><p><strong>介绍：</strong></p>
+<p>在指定的时间间隔内将内存中的数据集快照写入磁盘， 也就是行话讲的Snapshot快照，它恢复时是将快照文件直接读到内存里。</p>
+<p>Redis会单独创建（fork）一个子进程来进行持久化，会先将数据写入到 一个临时文件中，待持久化过程都结束了，再用这个临时文件替换上次持久化好的文件。 整个过程中，主进程是不进行任何IO操作的，这就确保了极高的性能 如果需要进行大规模数据的恢复，且对于数据恢复的完整性不是非常敏感，那RDB方式要比AOF方式更加的高效。</p>
+<p><strong>配置文件里的配置：</strong></p>
+<ul>
+<li>save  <second>  <changes>       在N秒内数据集至少有M个key改动</li>
+<li>dbfilename:     设置RDB的文件名，默认文件名为dump.rbd</li>
+<li>dir:      指定RDB文件的存储位置，默认是  .&#x2F;  当前目录</li>
+</ul>
+<p><strong>持久化的触发机制：</strong></p>
+<ul>
+<li>在规则满足的情况下</li>
+<li>执行save命令，flushall命令</li>
+<li>退出Redis</li>
+</ul>
+<p><strong>总结：</strong></p>
+<p>优点：适合大规模的数据恢复，适用于对数据完整性和一致性要求不高的场合，由于存储的是数据快照文件，恢复数据很方便，也比较快。</p>
+<p>缺点：会丢失最后一次快照以后更改的数据，由于经常操作磁盘，RDB会分出一个子进程，如果redis数据库很大，创建子进程的时间较长。</p>
+<h3 id="2、持久化机制AOF"><a href="#2、持久化机制AOF" class="headerlink" title="2、持久化机制AOF"></a>2、持久化机制AOF</h3><p><strong>介绍：</strong></p>
+<p>Redis每次接收到一条改变数据的命令时，他将把该命令写到一个AOF文件中，（只记录写操作，不记录读操作），当Redis重启时，他通过执行AOF文件中所有的命令来恢复数据。</p>
+<p><strong>配置文件里的配置：</strong></p>
+<ul>
+<li>appendonly:  默认是no，改成yes即开启了AOF持久化</li>
+<li>appendfilename:  指定AOF文件名，默认appendonly.aof</li>
+<li>dir:  指定RDB和AOF文件存放目录 ,默认 .&#x2F;</li>
+<li>Appendfsync: 配置项aof文件写命令数据策略。<ul>
+<li>no：不主动进行同步操作，而是完全交由操作系统来做（30秒一次），快但不安全</li>
+<li>always：每次执行写入都会执行同步，慢但安全</li>
+<li>everysec:  每秒执行一次同步操作，介于速度安全之间，这是默认项。</li>
+</ul>
+</li>
+<li>auto-aof-rewrite-min-size:  设置重写的基准值，最小文件64MB。达到这个值开始重写。<ul>
+<li>重写：把AOF文件里面没用的命令删除</li>
+</ul>
+</li>
+</ul>
+<h3 id="3、事务"><a href="#3、事务" class="headerlink" title="3、事务"></a>3、事务</h3><p><strong>事务操作的命令：</strong></p>
+<p><strong>multi：</strong>标记一个事务的开始，事务内的多余命令会按照先后顺序放进一个队列当中；</p>
+<p><strong>exec：</strong>执行所有事务块的命令；</p>
+<p><strong>discard：</strong>取消事务，放弃执行事务块内的所有命令</p>
+<p><strong>watch：</strong> 监视一个(或多个) key的值 ，如果在事务执行之前key被其他命令改动，那么事务将被打断</p>
+<p><strong>unwatch：</strong>取消对所有key的监视</p>
+<h2 id="六、主从读写分离"><a href="#六、主从读写分离" class="headerlink" title="六、主从读写分离"></a>六、主从读写分离</h2><p><strong>如何搭建：</strong></p>
+<p>在从服务器的配置文件加：slaveof  主机的IP  端口号   （如果有密码加上：masterauth ”honey“），</p>
+<p>从服务器只能读，主服务器能读能写。</p>
+<p>如果主服务器待机，需要手动调整主从搭配。通过哨兵模式可以自动的调整搭配。</p>
+<h2 id="七、哨兵模式"><a href="#七、哨兵模式" class="headerlink" title="七、哨兵模式"></a>七、哨兵模式</h2><p>单独的配置文件  &#x2F;root&#x2F;opt&#x2F;software&#x2F;redis-5.0.5&#x2F;sentinel.conf</p>
+<p>可以把配置文件放在创建的文件夹下，方便操作</p>
+<h3 id="1、单哨兵"><a href="#1、单哨兵" class="headerlink" title="1、单哨兵"></a>1、单哨兵</h3><ul>
+<li>进入配置文件，去掉保护模式第17行      protected-mode no</li>
+<li>修改监控的master, 更改ip和端口，最后一个数是需要几个哨兵确认master掉线，系统才确认master掉线，第84行       sentinel monitor mymaster 127.0.0.1 6379 2</li>
+<li>配置密码，第103行   sentinel auth-pass mymaster honey</li>
+<li>设置master掉线多长时间去跟换master    sentinel down-after-milliseconds mymaster 5000</li>
+</ul>
+<h3 id="2、多哨兵"><a href="#2、多哨兵" class="headerlink" title="2、多哨兵"></a>2、多哨兵</h3><p>odowm 主观挂机              sdown  客观挂机</p>
+<p><img src="C:/Users/越努力，越幸运。/Desktop/Redis知识.assets/1.png" alt="1"></p>
+<h2 id="八、缓存穿透、击穿、雪崩"><a href="#八、缓存穿透、击穿、雪崩" class="headerlink" title="八、缓存穿透、击穿、雪崩"></a>八、缓存穿透、击穿、雪崩</h2><h3 id="1、缓存穿透"><a href="#1、缓存穿透" class="headerlink" title="1、缓存穿透"></a>1、缓存穿透</h3><p>在高并发下，查询一个不存在Redis里的值时，缓存不会被命中，导致大量请求直接落在数据库中。</p>
+<h3 id="2、缓存击穿"><a href="#2、缓存击穿" class="headerlink" title="2、缓存击穿"></a>2、缓存击穿</h3><p>在高并发下，对一个特定的值进行查询，但是这个时候缓存正好过期了。缓存没有命中，导致大量的请求直接落到数据库中。</p>
+<h3 id="3、缓存雪崩"><a href="#3、缓存雪崩" class="headerlink" title="3、缓存雪崩"></a>3、缓存雪崩</h3><p>在高并发下，大量的缓存key在同一时间失效，导致大量的请求直接落到数据库中。</p>
+<p><strong>解决方案：</strong></p>
+<ul>
+<li>存储NULL值      </li>
+<li>布隆过滤器     </li>
+<li>缓存预热  </li>
+<li>限流，常用的限流算法（滑动窗口、令牌桶算法、漏桶算法）（队列，加锁） </li>
+<li>缓存永不过期</li>
+</ul>
+<h2 id="九、Java客户端-—-Jedis"><a href="#九、Java客户端-—-Jedis" class="headerlink" title="九、Java客户端 — Jedis"></a>九、Java客户端 — Jedis</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> xyz.honeysuccess.servlet;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> redis.clients.jedis.Jedis;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Honey</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2021/9/30</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">RedisTest</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testSet</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">Jedis</span> <span class="variable">jedis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Jedis</span>(<span class="string">&quot;127.0.0.1&quot;</span>,<span class="number">6379</span>);</span><br><span class="line">        jedis.auth(<span class="string">&quot;honey&quot;</span>);</span><br><span class="line">        jedis.set(<span class="string">&quot;test&quot;</span>,<span class="string">&quot;test&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="十、redis和springboot整合"><a href="#十、redis和springboot整合" class="headerlink" title="十、redis和springboot整合"></a>十、redis和springboot整合</h2><h2 id="十一、Redis6的新功能"><a href="#十一、Redis6的新功能" class="headerlink" title="十一、Redis6的新功能"></a>十一、Redis6的新功能</h2><h3 id="1、ACL（访问控制列表）"><a href="#1、ACL（访问控制列表）" class="headerlink" title="1、ACL（访问控制列表）"></a>1、ACL（访问控制列表）</h3><p>Redis ACL是Access Control List（访问控制列表）的缩写，该功能允许根据可以执行的命令和可以访问的键来限制某些连接。</p>
+<p>在Redis 5版本之前，Redis 安全规则只有密码控制 还有通过rename 来调整高危命令比如 flushdb ， KEYS* ， shutdown 等。Redis 6 则提供ACL的功能对用户进行更细粒度的权限控制 ：</p>
+<p>（1）接入权限:用户名和密码 </p>
+<p>（2）可以执行的命令 </p>
+<p>（3）可以操作的 KEY</p>
+<p>参考官网：<a target="_blank" rel="noopener" href="https://redis.io/topics/acl">https://redis.io/topics/acl</a></p>
+<p><em><strong>*命令*</strong></em></p>
+<p>1、使用acl list命令展现用户权限列表</p>
+<p>（1）数据说明</p>
+<p><img src="C:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsDF3A.tmp.jpg" alt="img"> </p>
+<p>2、使用acl cat命令</p>
+<p>（1）查看添加权限指令类别</p>
+<p><img src="C:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsDF3B.tmp.jpg" alt="img"> </p>
+<p>（2）加参数类型名可以查看类型下具体命令</p>
+<p><img src="C:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsDF3C.tmp.jpg" alt="img"> </p>
+<p>3、使用acl whoami命令查看当前用户</p>
+<p><img src="C:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsDF3D.tmp.jpg" alt="img"> </p>
+<p>4、使用aclsetuser命令创建和编辑用户ACL</p>
+<p>（1）ACL规则</p>
+<p>下面是有效ACL规则的列表。某些规则只是用于激活或删除标志，或对用户ACL执行给定更改的单个单词。其他规则是字符前缀，它们与命令或类别名称、键模式等连接在一起。</p>
+<table>
+<thead>
+<tr>
+<th>ACL规则</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>类型</td>
+<td>参数</td>
+<td>说明</td>
+</tr>
+<tr>
+<td>启动和禁用用户</td>
+<td><em><strong>*on*</strong></em></td>
+<td>激活某用户账号</td>
+</tr>
+<tr>
+<td><em><strong>*off*</strong></em></td>
+<td>禁用某用户账号。注意，已验证的连接仍然可以工作。如果默认用户被标记为off，则新连接将在未进行身份验证的情况下启动，并要求用户使用AUTH选项发送AUTH或HELLO，以便以某种方式进行身份验证。</td>
+<td></td>
+</tr>
+<tr>
+<td>权限的添加删除</td>
+<td>+</td>
+<td>将指令添加到用户可以调用的指令列表中</td>
+</tr>
+<tr>
+<td><em><strong>*-*</strong></em></td>
+<td>从用户可执行指令列表移除指令</td>
+<td></td>
+</tr>
+<tr>
+<td><em><strong>*+@*</strong></em></td>
+<td>添加该类别中用户要调用的所有指令，有效类别为@admin、@set、@sortedset…等，通过调用ACL CAT命令查看完整列表。特殊类别@all表示所有命令，包括当前存在于服务器中的命令，以及将来将通过模块加载的命令。</td>
+<td></td>
+</tr>
+<tr>
+<td>-@<actegory></td>
+<td>从用户可调用指令中移除类别</td>
+<td></td>
+</tr>
+<tr>
+<td>allcommands</td>
+<td>+@all的别名</td>
+<td></td>
+</tr>
+<tr>
+<td>nocommand</td>
+<td>-@all的别名</td>
+<td></td>
+</tr>
+<tr>
+<td>可操作键的添加或删除</td>
+<td>~</td>
+<td>添加可作为用户可操作的键的模式。例如~*允许所有的键</td>
+</tr>
+</tbody></table>
+<p>（2）通过命令创建新用户默认权限</p>
+<p>acl setuser user1</p>
+<p><img src="C:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsDF3E.tmp.jpg" alt="img"> </p>
+<p>在上面的示例中，我根本没有指定任何规则。如果用户不存在，这将使用just created的默认属性来创建用户。如果用户已经存在，则上面的命令将不执行任何操作。</p>
+<p>（3）设置有用户名、密码、ACL权限、并启用的用户</p>
+<p>acl setuser user2 on &gt;password ~cached:* +get</p>
+<p><img src="C:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsDF3F.tmp.jpg" alt="img"> </p>
+<p>(4)切换用户，验证权限</p>
+<p><img src="C:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsDF4F.tmp.jpg" alt="img"> </p>
+<h3 id="2、IO多线程"><a href="#2、IO多线程" class="headerlink" title="2、IO多线程"></a>2、IO多线程</h3><p>Redis6终于支撑多线程了，告别单线程了吗？</p>
+<p>IO多线程其实指客户端交互部分的网络IO交互处理模块多线程，而非执行命令多线程。Redis6执行命令依然是单线程。</p>
+<p><em><strong>*原理架构*</strong></em></p>
+<p>Redis 6 加入多线程,但跟 Memcached 这种从 IO处理到数据访问多线程的实现模式有些差异。Redis 的多线程部分只是用来处理网络数据的读写和协议解析，执行命令仍然是单线程。之所以这么设计是不想因为多线程而变得复杂，需要去控制 key、lua、事务，LPUSH&#x2F;LPOP 等等的并发问题。整体的设计大体如下:</p>
+<p><img src="C:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsDF50.tmp.jpg" alt="img"> </p>
+<p>另外，多线程IO默认也是不开启的，需要再配置文件中配置</p>
+<p>io-threads-do-reads  yes </p>
+<p>io-threads 4</p>
+<h3 id="3、工具支持-Cluster"><a href="#3、工具支持-Cluster" class="headerlink" title="3、工具支持 Cluster"></a>3、工具支持 Cluster</h3><p>之前老版Redis想要搭集群需要单独安装ruby环境，Redis 5 将 redis-trib.rb 的功能集成到 redis-cli 。另外官方 redis-benchmark 工具开始支持 cluster 模式了，通过多线程的方式对多个分片进行压测。</p>
+<p><img src="C:/Users/越努力，越幸运。/Desktop/Redis知识.assets/wpsDF51.tmp.jpg" alt="img"> </p>
+<h2 id="十二、发布订阅"><a href="#十二、发布订阅" class="headerlink" title="十二、发布订阅"></a>十二、发布订阅</h2><p>订阅者：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; SUBSCRIBE honeysuccess</span><br><span class="line">Reading messages... (press Ctrl-C to quit)</span><br><span class="line">1) &quot;subscribe&quot;</span><br><span class="line">2) &quot;honeysuccess&quot;</span><br><span class="line">3) (integer) 1</span><br><span class="line">1) &quot;message&quot;</span><br><span class="line">2) &quot;honeysuccess&quot;</span><br><span class="line">3) &quot;nihaoyaredis&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>发布者：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; PUBLISH honeysuccess nihaoyaredis</span><br><span class="line">(integer) 1</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>使用场景：</strong>  </p>
+<ul>
+<li>实时消息系统</li>
+<li>实时聊天（频道当聊天室）</li>
+<li>订阅，关注系统等简单的场景</li>
+</ul>
+<p>复杂的一般都用RocketMQ等消息中间件</p>
+<h2 id="十三、Redis事务—–秒杀案例"><a href="#十三、Redis事务—–秒杀案例" class="headerlink" title="十三、Redis事务—–秒杀案例"></a>十三、Redis事务—–秒杀案例</h2><h3 id="1、准备"><a href="#1、准备" class="headerlink" title="1、准备"></a>1、准备</h3><p>CentOS7需要手动安装工具ab模拟测试    yum  install  httpd-tools</p>
+<p>ab测试语句：ab -n 1000 -c 100 -p .&#x2F;postfile -T application&#x2F;x-www-form-urlencoded <a target="_blank" rel="noopener" href="http://192.168.137.1/doseckill">http://192.168.137.1:80/doseckill</a></p>
+<h3 id="2、源代码"><a href="#2、源代码" class="headerlink" title="2、源代码"></a>2、源代码</h3><p><strong>servlet：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> xyz.honeysuccess.servlet;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.util.Random;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 秒杀案例</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SecKillServlet</span> <span class="keyword">extends</span> <span class="title class_">HttpServlet</span> &#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">long</span> <span class="variable">serialVersionUID</span> <span class="operator">=</span> <span class="number">1L</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">SecKillServlet</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line"></span><br><span class="line">		<span class="type">String</span> <span class="variable">userid</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Random</span>().nextInt(<span class="number">50000</span>) +<span class="string">&quot;&quot;</span> ;</span><br><span class="line">		<span class="type">String</span> <span class="variable">prodid</span> <span class="operator">=</span>request.getParameter(<span class="string">&quot;prodid&quot;</span>);</span><br><span class="line">		<span class="comment">// 不使用LUA脚本实现的秒杀，但是会出现乐观锁的遗留问题</span></span><br><span class="line"><span class="comment">//		boolean isSuccess=SecKill_redis.doSecKill(userid,prodid);</span></span><br><span class="line">		<span class="comment">// 使用LUA脚本实现秒杀，不会出现乐观锁的遗留问题</span></span><br><span class="line">		<span class="type">boolean</span> isSuccess= SecKill_redisByScript.doSecKill(userid,prodid);</span><br><span class="line">		response.getWriter().print(isSuccess);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>乐观锁秒杀核心代码：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> xyz.honeysuccess.servlet;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> redis.clients.jedis.Jedis;</span><br><span class="line"><span class="keyword">import</span> redis.clients.jedis.JedisPool;</span><br><span class="line"><span class="keyword">import</span> redis.clients.jedis.Transaction;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SecKill_redis</span> &#123;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 测试用的 main 函数</span></span><br><span class="line"><span class="comment">//	public static void main(String[] args) &#123;</span></span><br><span class="line"><span class="comment">//		Jedis jedis =new Jedis(&quot;192.168.120.200&quot;,6379);</span></span><br><span class="line"><span class="comment">//		jedis.auth(&quot;honey&quot;);</span></span><br><span class="line"><span class="comment">//		System.out.println(jedis.ping());</span></span><br><span class="line"><span class="comment">//		jedis.close();</span></span><br><span class="line"><span class="comment">//	&#125;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//秒杀过程</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">doSecKill</span><span class="params">(String uid,String prodid)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">		<span class="comment">//1 uid和prodid非空判断</span></span><br><span class="line">		<span class="keyword">if</span>(uid == <span class="literal">null</span> || prodid == <span class="literal">null</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//2 连接redis</span></span><br><span class="line"><span class="comment">//		Jedis jedis = new Jedis(&quot;192.168.120.200&quot;,6379);</span></span><br><span class="line"><span class="comment">//		jedis.auth(&quot;honey&quot;);</span></span><br><span class="line">		<span class="comment">//通过连接池得到jedis对象</span></span><br><span class="line">		<span class="type">JedisPool</span> <span class="variable">jedisPoolInstance</span> <span class="operator">=</span> JedisPoolUtil.getJedisPoolInstance();</span><br><span class="line">		<span class="type">Jedis</span> <span class="variable">jedis</span> <span class="operator">=</span> jedisPoolInstance.getResource();</span><br><span class="line">		jedis.auth(<span class="string">&quot;honey&quot;</span>);</span><br><span class="line"></span><br><span class="line">		<span class="comment">//3 拼接key</span></span><br><span class="line">		<span class="comment">// 3.1 库存key</span></span><br><span class="line">		<span class="type">String</span> <span class="variable">kcKey</span> <span class="operator">=</span> <span class="string">&quot;sk:&quot;</span>+prodid+<span class="string">&quot;:qt&quot;</span>;</span><br><span class="line">		<span class="comment">// 3.2 秒杀成功用户key</span></span><br><span class="line">		<span class="type">String</span> <span class="variable">userKey</span> <span class="operator">=</span> <span class="string">&quot;sk:&quot;</span>+prodid+<span class="string">&quot;:user&quot;</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//监视库存</span></span><br><span class="line">		jedis.watch(kcKey);</span><br><span class="line"></span><br><span class="line">		<span class="comment">//4 获取库存，如果库存null，秒杀还没有开始</span></span><br><span class="line">		<span class="type">String</span> <span class="variable">kc</span> <span class="operator">=</span> jedis.get(kcKey);</span><br><span class="line">		<span class="keyword">if</span>(kc == <span class="literal">null</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;秒杀还没有开始，请等待&quot;</span>);</span><br><span class="line">			jedis.close();</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 5 判断用户是否重复秒杀操作</span></span><br><span class="line">		<span class="keyword">if</span>(jedis.sismember(userKey, uid)) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;已经秒杀成功了，不能重复秒杀&quot;</span>);</span><br><span class="line">			jedis.close();</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//6 判断如果商品数量，库存数量小于1，秒杀结束</span></span><br><span class="line">		<span class="keyword">if</span>(Integer.parseInt(kc)&lt;=<span class="number">0</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;秒杀已经结束了&quot;</span>);</span><br><span class="line">			jedis.close();</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//7 秒杀过程</span></span><br><span class="line">		<span class="comment">//使用事务</span></span><br><span class="line">		<span class="type">Transaction</span> <span class="variable">multi</span> <span class="operator">=</span> jedis.multi();</span><br><span class="line"></span><br><span class="line">		<span class="comment">//组队操作</span></span><br><span class="line">		multi.decr(kcKey);</span><br><span class="line">		multi.sadd(userKey,uid);</span><br><span class="line"></span><br><span class="line">		<span class="comment">//执行</span></span><br><span class="line">		List&lt;Object&gt; results = multi.exec();</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span>(results == <span class="literal">null</span> || results.size()==<span class="number">0</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;秒杀失败了....&quot;</span>);</span><br><span class="line">			jedis.close();</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//		//7.1 库存-1</span></span><br><span class="line"><span class="comment">//		jedis.decr(kcKey);</span></span><br><span class="line"><span class="comment">//		//7.2 把秒杀成功用户添加清单里面</span></span><br><span class="line"><span class="comment">//		jedis.sadd(userKey,uid);</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line">		System.out.println(<span class="string">&quot;秒杀成功了..&quot;</span>);</span><br><span class="line">		jedis.close();</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>LUA脚本秒杀核心代码：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> xyz.honeysuccess.servlet;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.util.HashSet;</span><br><span class="line"><span class="keyword">import</span> java.util.Set;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.slf4j.LoggerFactory;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> redis.clients.jedis.HostAndPort;</span><br><span class="line"><span class="keyword">import</span> redis.clients.jedis.Jedis;</span><br><span class="line"><span class="keyword">import</span> redis.clients.jedis.JedisPool;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SecKill_redisByScript</span> &#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span>  org.slf4j.<span class="type">Logger</span> <span class="variable">logger</span> <span class="operator">=</span>LoggerFactory.getLogger(SecKill_redisByScript.class) ;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		<span class="type">JedisPool</span> <span class="variable">jedispool</span> <span class="operator">=</span>  JedisPoolUtil.getJedisPoolInstance();</span><br><span class="line"> </span><br><span class="line">		Jedis jedis=jedispool.getResource();</span><br><span class="line">		System.out.println(jedis.ping());</span><br><span class="line">		</span><br><span class="line">		Set&lt;HostAndPort&gt; set=<span class="keyword">new</span> <span class="title class_">HashSet</span>&lt;HostAndPort&gt;();</span><br><span class="line"></span><br><span class="line">	<span class="comment">//	doSecKill(&quot;201&quot;,&quot;sk:0101&quot;);</span></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">static</span> <span class="type">String</span> <span class="variable">secKillScript</span> <span class="operator">=</span><span class="string">&quot;local userid=KEYS[1];\r\n&quot;</span> + </span><br><span class="line">			<span class="string">&quot;local prodid=KEYS[2];\r\n&quot;</span> + </span><br><span class="line">			<span class="string">&quot;local qtkey=&#x27;sk:&#x27;..prodid..\&quot;:qt\&quot;;\r\n&quot;</span> + </span><br><span class="line">			<span class="string">&quot;local usersKey=&#x27;sk:&#x27;..prodid..\&quot;:usr\&quot;;\r\n&quot;</span> + </span><br><span class="line">			<span class="string">&quot;local userExists=redis.call(\&quot;sismember\&quot;,usersKey,userid);\r\n&quot;</span> + </span><br><span class="line">			<span class="string">&quot;if tonumber(userExists)==1 then \r\n&quot;</span> + </span><br><span class="line">			<span class="string">&quot;   return 2;\r\n&quot;</span> + </span><br><span class="line">			<span class="string">&quot;end\r\n&quot;</span> + </span><br><span class="line">			<span class="string">&quot;local num= redis.call(\&quot;get\&quot; ,qtkey);\r\n&quot;</span> + </span><br><span class="line">			<span class="string">&quot;if tonumber(num)&lt;=0 then \r\n&quot;</span> + </span><br><span class="line">			<span class="string">&quot;   return 0;\r\n&quot;</span> + </span><br><span class="line">			<span class="string">&quot;else \r\n&quot;</span> + </span><br><span class="line">			<span class="string">&quot;   redis.call(\&quot;decr\&quot;,qtkey);\r\n&quot;</span> + </span><br><span class="line">			<span class="string">&quot;   redis.call(\&quot;sadd\&quot;,usersKey,userid);\r\n&quot;</span> + </span><br><span class="line">			<span class="string">&quot;end\r\n&quot;</span> + </span><br><span class="line">			<span class="string">&quot;return 1&quot;</span> ;</span><br><span class="line">			 </span><br><span class="line">	<span class="keyword">static</span> <span class="type">String</span> <span class="variable">secKillScript2</span> <span class="operator">=</span> </span><br><span class="line">			<span class="string">&quot;local userExists=redis.call(\&quot;sismember\&quot;,\&quot;&#123;sk&#125;:0101:usr\&quot;,userid);\r\n&quot;</span> +</span><br><span class="line">			<span class="string">&quot; return 1&quot;</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">doSecKill</span><span class="params">(String uid,String prodid)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line"></span><br><span class="line">		<span class="type">JedisPool</span> <span class="variable">jedispool</span> <span class="operator">=</span>  JedisPoolUtil.getJedisPoolInstance();</span><br><span class="line">		Jedis jedis=jedispool.getResource();</span><br><span class="line">		jedis.auth(<span class="string">&quot;honey&quot;</span>);</span><br><span class="line"></span><br><span class="line">		 <span class="comment">//String sha1=  .secKillScript;</span></span><br><span class="line">		String sha1=  jedis.scriptLoad(secKillScript);</span><br><span class="line">		Object result= jedis.evalsha(sha1, <span class="number">2</span>, uid,prodid);</span><br><span class="line"></span><br><span class="line">		  String reString=String.valueOf(result);</span><br><span class="line">		<span class="keyword">if</span> (<span class="string">&quot;0&quot;</span>.equals( reString )  ) &#123;</span><br><span class="line">			System.err.println(<span class="string">&quot;已抢空！！&quot;</span>);</span><br><span class="line">		&#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="string">&quot;1&quot;</span>.equals( reString )  )  &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;抢购成功！！！！&quot;</span>);</span><br><span class="line">		&#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="string">&quot;2&quot;</span>.equals( reString )  )  &#123;</span><br><span class="line">			System.err.println(<span class="string">&quot;该用户已抢过！！&quot;</span>);</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			System.err.println(<span class="string">&quot;抢购异常！！&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		jedis.close();</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>连接池工具类：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> xyz.honeysuccess.servlet;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> redis.clients.jedis.Jedis;</span><br><span class="line"><span class="keyword">import</span> redis.clients.jedis.JedisPool;</span><br><span class="line"><span class="keyword">import</span> redis.clients.jedis.JedisPoolConfig;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JedisPoolUtil</span> &#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">volatile</span> <span class="type">JedisPool</span> <span class="variable">jedisPool</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> <span class="title function_">JedisPoolUtil</span><span class="params">()</span> &#123;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> JedisPool <span class="title function_">getJedisPoolInstance</span><span class="params">()</span> &#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="literal">null</span> == jedisPool) &#123;</span><br><span class="line">			<span class="keyword">synchronized</span> (JedisPoolUtil.class) &#123;</span><br><span class="line">				<span class="keyword">if</span> (<span class="literal">null</span> == jedisPool) &#123;</span><br><span class="line">					<span class="type">JedisPoolConfig</span> <span class="variable">poolConfig</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JedisPoolConfig</span>();</span><br><span class="line">					poolConfig.setMaxTotal(<span class="number">200</span>);</span><br><span class="line">					poolConfig.setMaxIdle(<span class="number">32</span>);</span><br><span class="line">					poolConfig.setMaxWaitMillis(<span class="number">100</span>*<span class="number">1000</span>);</span><br><span class="line">					poolConfig.setBlockWhenExhausted(<span class="literal">true</span>);</span><br><span class="line">					poolConfig.setTestOnBorrow(<span class="literal">false</span>);  <span class="comment">// ping  PONG</span></span><br><span class="line">					poolConfig.setTestWhileIdle(<span class="literal">true</span>);</span><br><span class="line">					jedisPool = <span class="keyword">new</span> <span class="title class_">JedisPool</span>(poolConfig, <span class="string">&quot;192.168.120.200&quot;</span>, <span class="number">6379</span>, <span class="number">60000</span>);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> jedisPool;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">release</span><span class="params">(JedisPool jedisPool, Jedis jedis)</span> &#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="literal">null</span> != jedis) &#123;</span><br><span class="line">			jedisPool.close();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>pom.xml 文件：</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>xyz.honeysuccess<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>seckill<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">packaging</span>&gt;</span>war<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">project.build.sourceEncoding</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">maven.compiler.source</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.source</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">maven.compiler.target</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.target</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.servlet<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>javax.servlet-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.1.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">scope</span>&gt;</span>provided<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.slf4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>slf4j-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.7.21<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.17<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>redis.clients<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jedis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.9.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.commons<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-pool2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.4.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.codehaus.janino<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-compiler<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.7.8<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>ch.qos.logback<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>logback-access<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.1.8<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>ch.qos.logback<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>logback-classic<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.1.8<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>ch.qos.logback<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>logback-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.1.8<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.tomcat.maven<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>tomcat7-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">          <span class="comment">&lt;!-- 指定端口 --&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">port</span>&gt;</span>80<span class="tag">&lt;/<span class="name">port</span>&gt;</span></span><br><span class="line">          <span class="comment">&lt;!-- 请求路径 --&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">path</span>&gt;</span>/<span class="tag">&lt;/<span class="name">path</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>web.xml 文件：</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">web-app</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://java.sun.com/xml/ns/javaee&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://java.sun.com/xml/ns/javaee</span></span></span><br><span class="line"><span class="string"><span class="tag">		  http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">version</span>=<span class="string">&quot;2.5&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">description</span>&gt;</span><span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">display-name</span>&gt;</span>doseckill<span class="tag">&lt;/<span class="name">display-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>doseckill<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>xyz.honeysuccess.servlet.SecKillServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>doseckill<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/doseckill<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>index.jsp(使用JQuery  3.1.0版本)：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">&quot;java&quot;</span> contentType=<span class="string">&quot;text/html; charset=UTF-8&quot;</span></span><br><span class="line">    pageEncoding=<span class="string">&quot;UTF-8&quot;</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE html PUBLIC <span class="string">&quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;</span> <span class="string">&quot;http://www.w3.org/TR/html4/loose.dtd&quot;</span>&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=<span class="string">&quot;Content-Type&quot;</span> content=<span class="string">&quot;text/html; charset=UTF-8&quot;</span>&gt;</span><br><span class="line">&lt;title&gt;Insert title here&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;h1&gt;iPhone <span class="number">13</span> Pro !!!  <span class="number">1</span>元秒杀！！！</span><br><span class="line">&lt;/h1&gt;</span><br><span class="line">    </span><br><span class="line">&lt;form id=<span class="string">&quot;msform&quot;</span> action=<span class="string">&quot;$&#123;pageContext.request.contextPath&#125;/doseckill&quot;</span> enctype=<span class="string">&quot;application/x-www-form-urlencoded&quot;</span>&gt;</span><br><span class="line">	&lt;input type=<span class="string">&quot;hidden&quot;</span> id=<span class="string">&quot;prodid&quot;</span> name=<span class="string">&quot;prodid&quot;</span> value=<span class="string">&quot;0101&quot;</span>&gt;</span><br><span class="line">	&lt;input type=<span class="string">&quot;button&quot;</span>  id=<span class="string">&quot;miaosha_btn&quot;</span> name=<span class="string">&quot;seckill_btn&quot;</span> value=<span class="string">&quot;秒杀点我&quot;</span>/&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script  type=<span class="string">&quot;text/javascript&quot;</span> src=<span class="string">&quot;$&#123;pageContext.request.contextPath&#125;/script/jquery/jquery-3.1.0.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script  type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line">$(function()&#123;</span><br><span class="line">	$(<span class="string">&quot;#miaosha_btn&quot;</span>).click(function()&#123;</span><br><span class="line">		<span class="keyword">var</span> url=$(<span class="string">&quot;#msform&quot;</span>).attr(<span class="string">&quot;action&quot;</span>);</span><br><span class="line">	     $.post(url,$(<span class="string">&quot;#msform&quot;</span>).serialize(),function(data)&#123;</span><br><span class="line">     		<span class="keyword">if</span>(data==<span class="string">&quot;false&quot;</span>)&#123;</span><br><span class="line">    			alert(<span class="string">&quot;抢光了&quot;</span> );</span><br><span class="line">    			$(<span class="string">&quot;#miaosha_btn&quot;</span>).attr(<span class="string">&quot;disabled&quot;</span>,<span class="literal">true</span>);</span><br><span class="line">    		&#125;</span><br><span class="line">		&#125; );    </span><br><span class="line">	&#125;)</span><br><span class="line">&#125;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/02/13/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" data-id="ckzkwe9ap00016cubhx1t5ec5" data-title="我的第一篇博客文章" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2022/02/13/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/02/13/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">我的第一篇博客文章</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/13/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
